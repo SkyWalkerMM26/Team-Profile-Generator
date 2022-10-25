@@ -30,7 +30,7 @@ inquirer
     {
       type: 'input',
       name: 'email',
-      message: "What is the team's manager email?",
+      message: "What is the team manager's email?",
     },
     {
       type: 'input',
@@ -38,15 +38,16 @@ inquirer
       message: "What is the team manager's office number?",
     },
     {
-      type: 'input',
+      type: 'list',
       name: 'teammate add',
       message: "Which type of the team member would you like to add?",
+      choices: ["Engineer","Intern","I don't want to add any more team members."],
     },
   ])
   .then((answers) => {
     const htmlPageContent = generateHTML(answers);
 
-    fs.writeFile('./dist/team.html', htmlPageContent, (err) =>
+    fs.writeFile('team.html', htmlPageContent, (err) =>
       err ? console.log(err) : console.log('Successfully created team.html!')
     );
   });
