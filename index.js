@@ -41,7 +41,7 @@ inquirer
       type: 'list',
       name: 'teammate add',
       message: "Which type of the team member would you like to add?",
-      choices: ["Engineer","Intern","I don't want to add any more team members."],
+      choices: ["Manager","Engineer","Intern","I don't want to add any more team members."],
     },
   ])
   .then((answers) => {
