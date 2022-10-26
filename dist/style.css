@@ -3,7 +3,7 @@
     flex-direction: column;
     justify-content: space-between;
     margin: 1em;
-    max-width: 280px;
+    max-width: 300px;
     width: 70%;
     min-height: 20rem;
     color: white;
@@ -22,4 +22,10 @@
 .data-list-info {
 color: #000000;
 text-decoration: none;
+}
+
+.team-area {
+  max-width: 1000px;
+  margin: 3em auto;
+  flex-wrap: wrap;
 }

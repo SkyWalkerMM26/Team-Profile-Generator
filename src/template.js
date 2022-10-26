@@ -5,14 +5,14 @@ const team = (crew) => {
         return `
         <div class="card team-member-card">
         <div class="card-header">
-            <h2 class="card-title"></i>${intern.role()}</h2>
-            <h3 class="card-title">${intern.name()}</h3>
+            <h2 class="card-title"></i>${intern.getRole()}</h2>
+            <h3 class="card-title">${intern.getName()}</h3>
         </div>
         <div class="card-body">
             <ul class="list-group">
-                <li class="data-list-info">ID: ${intern.id()}</li>
-                <li class="data-list-info">Email: <a href="mailto:${intern.email()}">${intern.email()}</a></li>
-                <li class="data-list-info">Office number: ${intern.officeNumber()}</li>
+                <li class="data-list-info">ID: ${intern.getId()}</li>
+                <li class="data-list-info">Email: <a href="mailto:${intern.getEmail()}">${intern.getEmail()}</a></li>
+                <li class="data-list-info">Office number: ${intern.getNumber()}</li>
             </ul>
         </div>
     </div>
@@ -22,14 +22,14 @@ const team = (crew) => {
         return `
         <div class="card team-member-card">
         <div class="card-header">
-            <h2 class="card-title"></i>${engineer.role()}</h2>
-            <h3 class="card-title">${engineer.name()}</h3>
+            <h2 class="card-title"></i>${engineer.getRole()}</h2>
+            <h3 class="card-title">${engineer.getName()}</h3>
         </div>
         <div class="card-body">
             <ul class="list-group">
-                <li class="data-list-info">ID: ${engineer.id()}</li>
-                <li class="data-list-info">Email: <a href="mailto:${engineer.email()}">${engineer.email()}</a></li>
-                <li class="data-list-info">Office number: ${engineer.officeNumber()}</li>
+                <li class="data-list-info">ID: ${engineer.getId()}</li>
+                <li class="data-list-info">Email: <a href="mailto:${engineer.getEmail()}">${engineer.getEmail()}</a></li>
+                <li class="data-list-info">Office number: ${engineer.getNumber()}</li>
             </ul>
         </div>
     </div>
@@ -39,14 +39,14 @@ const team = (crew) => {
         return `
         <div class="card team-member-card">
         <div class="card-header">
-            <h2 class="card-title"></i>${manager.role()}</h2>
-            <h3 class="card-title">${manager.name()}</h3>
+            <h2 class="card-title"></i>${manager.getRole()}</h2>
+            <h3 class="card-title">${manager.getName()}</h3>
         </div>
         <div class="card-body">
             <ul class="list-group">
-                <li class="data-list-info">ID: ${manager.id()}</li>
-                <li class="data-list-info">Email: <a href="mailto:${manager.email()}">${manager.email()}</a></li>
-                <li class="data-list-info">Office number: ${manager.officeNumber()}</li>
+                <li class="data-list-info">ID: ${manager.getId()}</li>
+                <li class="data-list-info">Email: <a href="mailto:${manager.getEmail()}">${manager.getEmail()}</a></li>
+                <li class="data-list-info">Office number: ${manager.getNumber()}</li>
             </ul>
         </div>
     </div>
@@ -56,27 +56,28 @@ const team = (crew) => {
     const html = [];
 
     html.push(
-        team
-          .filter((employee) => employee.role() === "Intern")
+        crew
+          .filter((employee) => employee.getRole() === "Intern")
           .map((intern) => createIntern(intern))
           .join("")
     );
     html.push(
-        team
-          .filter((employee) => employee.role() === "Engineer")
+        crew
+          .filter((employee) => employee.getRole() === "Engineer")
           .map((engineer) => createEngineer(engineer))
           .join("")
     );
     html.push(
-        team
-          .filter((employee) => employee.role() === "Manager")
+        crew
+          .filter((employee) => employee.getRole() === "Manager")
           .map((manager) => createManager(manager))
+          .join("")
     );
     
     return html.join("");
 };
 
-module.exports = (team) => {
+module.exports = (crew) => {
     return `
         <!DOCTYPE html>
         <html lang="en">
@@ -84,7 +85,7 @@ module.exports = (team) => {
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <title>Team</title>
+        <title>Team Profile Generator</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="./dist/style.css">
         </head>
@@ -100,7 +101,7 @@ module.exports = (team) => {
             <div class="container">
                 <div class="row">
                     <div class="team-area col-12 d-flex justify-content-center">
-                        ${Team(crew)}
+                        ${team(crew)}
                     </div>
                 </div>
             </div>
