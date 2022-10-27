@@ -1,5 +1,5 @@
 
-# Professional ReadMe Generator
+# Team Profile Generator
 
 ## Author: Mai Moua 
 [GitHub](https://github.com/SkyWalkerMM26)
