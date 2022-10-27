@@ -29,6 +29,7 @@ This application is to generate a webpage that can provide a manager(s) an ease 
 
 Click on the video to see how the application works.
 
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/SrdHtp6Rn1w/0.jpg)](https://www.youtube.com/watch?v=SrdHtp6Rn1w)
 
 
 
